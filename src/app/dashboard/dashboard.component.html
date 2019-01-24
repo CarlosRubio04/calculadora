@@ -1,0 +1,65 @@
+<button type="button" name="button" (click)="captureScreen()">go</button>
+<div id="content">
+<div class="alert alert-info"><strong>Html To PDF Conversion - Angular 6</strong></div>
+<div></div>
+</div>
+<div>
+<table id="contentToConvert">
+<tbody>
+<tr>
+<th>Column1</th>
+<th>Column2</th>
+<th>Column3</th>
+</tr>
+<tr>
+<td>Row 1</td>
+<td>Row 1</td>
+<td>Row 1</td>
+</tr>
+<tr>
+<td>Row 2</td>
+<td>Row 2</td>
+<td>Row 2</td>
+</tr>
+<tr>
+<td>Row 3</td>
+<td>Row 3</td>
+<td>Row 3</td>
+</tr>
+<tr>
+<td>Row 4</td>
+<td>Row 4</td>
+<td>Row 4</td>
+</tr>
+<tr>
+<td>Row 5</td>
+<td>Row 5</td>
+<td>Row 5</td>
+</tr>
+<tr>
+<td>Row 6</td>
+<td>Row 6</td>
+<td>Row 6</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+
+<p>Exporting an excel file of type .xslx !!!</p>
+<p>Export as XLSX by clicking the below button</p>
+<button (click)="exportAsXLSX()">Exportar XLSX</button>
+<table>
+ <tr>
+   <td>Eid</td>
+   <td>Ename</td>
+   <td>Esal</td>
+ </tr>
+ <tr *ngFor="let item of data">
+   <td>{{item.eid}}</td>
+   <td>{{item.ename}}</td>
+   <td>{{item.esal}}</td>
+ </tr>
+</table>

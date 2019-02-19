@@ -32,7 +32,8 @@
             matInput
             placeholder="Número de empleado"
             type="number"
-            [(ngModel)]="NumEmployees">
+            [(ngModel)]="NumEmployees"
+            (change)="UpdateRange()">
           <mat-icon matSuffix>person</mat-icon>
           <mat-hint>Min 20, Max 5000</mat-hint>
         </mat-form-field>

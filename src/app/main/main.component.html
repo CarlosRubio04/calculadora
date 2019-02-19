@@ -1,43 +1,60 @@
 <section class="main">
-<mat-vertical-stepper [linear]="isLinear" #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Modalidad de Productos</ng-template>
-      <mat-form-field>
-        <mat-select placeholder="Selcciona una" formControlName="modalidad">
-          <mat-option  [value]="1">
-            Suscripción Anual
-          </mat-option>
-          <mat-option  [value]="2">
-            Evaluación única
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Número de empleados</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Número de empleados a evaluar" formControlName="empleados" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    You are now done.
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
-</mat-vertical-stepper>
+  <div class="main-container">
+    <div class="results">
 
+    </div>
+    <div class="calc">
+      <div class="calc-subs">
+        <h3>Modalidad de Productos</h3>
+        <div class="item">
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="changeSubcs()">
+            Suscripción Anual
+          </button>
+        </div>
+        <div class="item">
+          <button
+            mat-stroked-button
+            color="primary"
+            (click)="changeSubcs()">
+            Evaluación Única
+          </button>
+        </div>
+      </div>
+
+      <div class="calc-people">
+        <h3>Número de empleados</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>Número de empleados</mat-label>
+          <input
+            matInput
+            placeholder="Número de empleado"
+            type="number"
+            [(ngModel)]="NumEmployees">
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-hint>Min 20, Max 5000</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="calc-packages">
+        <h3>Paquetes</h3>
+        <div class="calc-packages-items">
+          <div class="item">
+            <button mat-flat-button color="primary">Flex Total</button>
+          </div>
+          <div class="item">
+            <button mat-flat-button color="primary">Flex Desarrollo</button>
+          </div>
+          <div class="item">
+            <button mat-flat-button color="primary">Flex Desempeño</button>
+          </div>
+          <div class="item">
+            <button mat-flat-button color="primary">Flex Engagement</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

@@ -8,19 +8,20 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+
+  AnualSubcs: boolean = true;
+  NumEmployees: number = 20;
+  PackagesSelc: any = {};
 
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      modalidad: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      empleados: ['', Validators.required]
-    });
+
+  }
+
+  changeSubcs() {
+    this.AnualSubcs = !this.AnualSubcs;
+    console.log(this.AnualSubcs);
   }
 
 }

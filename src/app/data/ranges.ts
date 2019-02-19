@@ -1,4 +1,5 @@
-export const ranges: any = [{
+export const ranges: any = [
+  {
       id: 0,
       min: 0,
       max: 20
@@ -86,4 +87,5 @@ export const ranges: any = [{
       id: 21,
       min: 3001,
       max: 5e3
-  }]
+  }
+]

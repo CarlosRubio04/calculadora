@@ -21,6 +21,9 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.Range = this.mainService.getRange(this.NumEmployees);
     console.log(this.Range);
+
+    const price = this.mainService.getPrice('usd', 1, 1, 1);
+    console.log(price);
   }
 
   changeSubcs() {

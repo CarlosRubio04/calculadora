@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ranges } from '../data/ranges';
-import { pricesUsd } from '../data/prices.usd'
+import { pricesUsd } from '../data/prices.usd';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class MainService {
     console.log(currencySelc);
     const productsSelc = currencySelc.filter(prodType => prodType.id === type)[0].produto;
     console.log(productsSelc);
-    const productSelc = productsSelc.filter(prod => prod.productId === product)
+    const productSelc = productsSelc.filter(prod => prod.productId === product);
     console.log(productSelc);
 
     return productSelc[0].price.filter(prodRange => prodRange.rango === range)[0];
@@ -30,10 +30,10 @@ export class MainService {
   getCurrency(val) {
     switch (val) {
       case 'usd':
-      return pricesUsd
+      return pricesUsd;
       break;
       case 'cop':
-      return null
+      return null;
       break;
       default:
       return pricesUsd;

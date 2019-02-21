@@ -1,65 +1,147 @@
-<section class="main">
+<section class="main mat-typography">
   <div class="main-container">
-    <div class="results">
-
-    </div>
     <div class="calc">
       <div class="calc-subs">
-        <h3>Modalidad de Productos</h3>
         <div class="item">
-          <button
-            mat-flat-button
-            color="primary"
-            (click)="changeSubcs()">
-            Suscripción Anual
-          </button>
+            <h1>acsendo Calc</h1>
         </div>
         <div class="item">
-          <button
-            mat-stroked-button
-            color="primary"
-            (click)="changeSubcs()">
-            Evaluación Única
-          </button>
+          <mat-slide-toggle
+            [(ngModel)]="AnualSubcs"
+            color="primary">
+            {{ AnualSubcs ? 'Suscripción Anual' : 'Evaluación Unica'}}
+          </mat-slide-toggle>
+        </div>
+
+      </div>
+
+    
+      <div class="calc-packages">
+        <div class="calc-packages-heading">
+          <div class="item">
+              <h3>Paquetes Flex</h3>
+          </div>
+          <div class="item">
+              <mat-slide-toggle
+                (change)="MainValidator()"
+                [(ngModel)]="FlexTotal"
+                color="primary">
+                Flex Total
+              </mat-slide-toggle>
+          </div>
+        </div>
+   
+        <div class="calc-packages-items">
+          <div class="item">
+              <mat-slide-toggle
+                (change)="MainValidator()"
+                [(ngModel)]="FlexDesarrollo"
+                color="primary">
+                Flex Desarrollo
+              </mat-slide-toggle>
+          </div>
+          <div class="item">
+              <mat-slide-toggle
+                (change)="MainValidator()"
+                [(ngModel)]="FlexDesmpeno"
+                color="primary">
+                Flex Desmpeño
+              </mat-slide-toggle>
+          </div>
+          <div class="item">
+              <mat-slide-toggle
+                (change)="MainValidator()"
+                [(ngModel)]="FlexEngagement"
+                color="primary">
+                Flex Engagement
+              </mat-slide-toggle>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calc-modules">
+        <div class="calc-modules-heading">
+          <div class="item">
+            <h3>Modulos Flex</h3>
+          </div>
+        </div>
+        <div class="calc-modules-container">
+          <div class="item">
+              <mat-checkbox
+                (change)="MainValidator()" 
+                color="primary" 
+                [(ngModel)]="Metas">
+                Metas
+              </mat-checkbox>
+          </div>
+          <div class="item">
+              <mat-checkbox
+                (change)="MainValidator()" 
+                color="primary" 
+                [(ngModel)]="Competencias">
+                Competencias
+              </mat-checkbox>
+          </div>
+          <div class="item">
+              <mat-checkbox
+                (change)="MainValidator()" 
+                color="primary" 
+                [(ngModel)]="Pid">
+                PID
+              </mat-checkbox>
+          </div>
+          <div class="item">
+              <mat-checkbox 
+                (change)="MainValidator()"
+                color="primary" 
+                [(ngModel)]="Reconocimiento">
+                Reconocimiento
+              </mat-checkbox>
+          </div>
+          <div class="item">
+              <mat-checkbox 
+                (change)="MainValidator()"
+                color="primary" 
+                [(ngModel)]="PlanSucesion">
+                Plan de Sucesión
+              </mat-checkbox>
+          </div>
         </div>
       </div>
 
       <div class="calc-people">
-        <h3>Número de empleados</h3>
-        <mat-form-field appearance="outline">
-          <mat-label>Número de empleados</mat-label>
-          <input
-            matInput
-            placeholder="Número de empleado"
-            type="number"
-            [(ngModel)]="NumEmployees"
-            (change)="UpdateRange()">
-          <mat-icon matSuffix>person</mat-icon>
-          <mat-hint>Min 20, Max 5000</mat-hint>
-        </mat-form-field>
-      </div>
-
-      <div class="calc-packages">
-        <h3>Paquetes</h3>
-        <div class="calc-packages-items">
           <div class="item">
-            <button
-              mat-flat-button
-              color="primary">
-              Flex Total
-            </button>
+            <h2 class="example-h2">Número de Empleados</h2>
+            <mat-slider
+                (change)="MainValidator()"
+                class="example-margin"
+                color="primary"
+                [max]="max"
+                [min]="min"
+                [step]="step"
+                [thumbLabel]="thumbLabel"
+                [tickInterval]="tickInterval"
+                [(ngModel)]="NumEmployees">
+            </mat-slider>
           </div>
           <div class="item">
-            <button mat-flat-button color="primary">Flex Desarrollo</button>
+              <mat-form-field>
+                <input
+                  (change)="MainValidator()"
+                  matInput
+                  class="numEmploys"
+                  type="number"
+                  [(ngModel)]="NumEmployees"
+                  (change)="UpdateRange()">
+                <mat-hint>Min 20, Max 5000</mat-hint>
+              </mat-form-field>
           </div>
-          <div class="item">
-            <button mat-flat-button color="primary">Flex Desempeño</button>
-          </div>
-          <div class="item">
-            <button mat-flat-button color="primary">Flex Engagement</button>
-          </div>
+          
         </div>
-      </div>
+    </div>
+
+    <div class="results">
+
     </div>
   </div>
 </section>

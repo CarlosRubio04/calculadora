@@ -35,12 +35,39 @@
   &-packages {
     position: relative;
 
+    &-heading {
+      display: flex;
+    }
+
     &-items {
       display: flex;
 
       .item {
         margin: 0 6px;
       }
+    }
+  }
+
+  &-people {
+    position: relative;
+
+    .item {
+
+      .mat-form-field, .mat-slider {
+        display: block !important;
+      }
+      .numEmploys {
+        font-size: 40px;
+        text-align: center;
+      }
+    }
+  }
+
+  &-modules {
+    position: relative;
+
+    &-container {
+      display: flex;
     }
   }
 

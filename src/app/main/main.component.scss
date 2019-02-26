@@ -26,6 +26,7 @@
   &-subs {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     .item {
       margin: 0 10px;
@@ -34,22 +35,28 @@
 
   &-packages {
     position: relative;
+    margin-top: 40px;
 
     &-heading {
       display: flex;
+      justify-content: space-between;
     }
 
     &-items {
       display: flex;
 
       .item {
-        margin: 0 6px;
+        margin: 0 1px;
+        background-color: #eee;
+        padding: 20px;
+        width: 100%;
       }
     }
   }
 
   &-people {
     position: relative;
+    margin-top: 40px;
 
     .item {
 
@@ -65,9 +72,17 @@
 
   &-modules {
     position: relative;
+    margin-top: 40px;
 
     &-container {
       display: flex;
+
+      .item {
+        margin: 0 1px;
+        background-color: #eee;
+        padding: 20px;
+        width: 100%;
+      }
     }
   }
 

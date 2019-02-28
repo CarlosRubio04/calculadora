@@ -15,16 +15,14 @@ export class MainService {
   }
 
   public getPrice(currency, type, product, range) {
-    console.log(type, range);
+    // console.log(type, range);
     const currencySelc = this.getCurrency(currency);
-    console.log(currencySelc);
+    // console.log(currencySelc);
     const productsSelc = currencySelc.filter(prodType => prodType.id === type)[0].produto;
-    console.log(productsSelc);
-    const productSelc = productsSelc.filter(prod => prod.productId === product);
-    console.log(productSelc);
-
-    return productSelc[0].price.filter(prodRange => prodRange.rango === range)[0];
-
+    // console.log(productsSelc);
+    const priceBase =  productsSelc.filter(prod => prod.productId === product)[0].price;
+    // console.log(productSelc);
+    return priceBase - (priceBase * (0.025 * range));
   }
 
   getCurrency(val) {

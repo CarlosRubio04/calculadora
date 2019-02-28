@@ -11,7 +11,7 @@ export class MainService {
 
   public getRange(val) {
     console.log(val, ranges);
-    return ranges.filter(range => range.min <= val && range.max >= val)
+    return ranges.filter(range => range.min <= val && range.max >= val);
   }
 
   public getPrice(currency, type, product, range) {

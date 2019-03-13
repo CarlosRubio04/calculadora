@@ -38,6 +38,9 @@ export class MainComponent implements OnInit {
   step = 1;
   thumbLabel = true;
 
+  // Data
+  ProductSelect: Object = {};
+
   constructor(private _formBuilder: FormBuilder,
               private mainService: MainService) {}
 
@@ -60,10 +63,6 @@ export class MainComponent implements OnInit {
     console.log(this.Range);
   }
 
-  selectPackage(val) {
-    
-  }
-
   MainValidator() {
     // Validate Flex Total
 
@@ -80,6 +79,9 @@ export class MainComponent implements OnInit {
       this.Pid = true;
       this.Reconocimiento = true;
       this.PlanSucesion = true;
+
+      // Flex total Id 3
+      const FlextTotalPrice = this.mainService.getPrice('usd', 1, 3, this.Range);
     }
 
     // Validate Flex Desarrollo
@@ -87,17 +89,26 @@ export class MainComponent implements OnInit {
     if (!this.FlexTotal && this.FlexDesarrollo) {
       this.Pid = true;
       this.PlanSucesion = true;
+
+      // Flex Desarrollo Id 10
+      const FlextDesarrolloPrice = this.mainService.getPrice('usd', 1, 10, this.Range);
     }
 
     // Validate Flex Desempeño
     if (!this.FlexTotal && this.FlexDesmpeno) {
       this.Metas = true;
       this.Competencias = true;
+
+      // Flex Desempeño Id 4
+      const FlextDesempenoPrice = this.mainService.getPrice('usd', 1, 4, this.Range);
     }
 
     // Validate Flex Engagement
     if (!this.FlexTotal && this.FlexEngagement){
       this.Reconocimiento = true;
+
+      // Flex Engagement Id 11
+      const FlextEngagementPrice = this.mainService.getPrice('usd', 1, 11, this.Range);
     }
   }
 
